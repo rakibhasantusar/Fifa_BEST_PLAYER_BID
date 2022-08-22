@@ -1,7 +1,7 @@
 const playerNameList = document.getElementById('player-list');
 
 function playerSelection(element) {
-    element.style.display = 'none'
+    element.disabled = true;  // button disabled done
     const playerName = element.parentNode.parentNode.children[0].innerText;
     const playerListName = document.createElement('li');
     playerListName.innerHTML = `${playerName}
@@ -37,9 +37,7 @@ function playerExpenses(testId) {
     return playerExpenses.innerText
 }
 
-document.getElementById('calculate-player-cost').addEventListener('click', function () {
-    playerExpenses('player-expenses');
-})
+
 
 // common function for manager coach input
 
@@ -52,9 +50,15 @@ function managerCoachCommon(inputId) {
     return managerCoachCommon
 }
 
+
+document.getElementById('calculate-player-cost').addEventListener('click', function () {
+    playerExpenses('player-expenses');
+})
+
 function playesrCost() {
-    const totalplayerCostString = playerExpenses('player-expenses');
-    const totalplayerCost = parseFloat(totalplayerCostString)
+    const totalplayerCostString = document.getElementById('player-expenses');
+    const totalplayerCostvalue = totalplayerCostString.innerText
+    const totalplayerCost = parseFloat(totalplayerCostvalue)
     return totalplayerCost
 }
 
