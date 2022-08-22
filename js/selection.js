@@ -6,14 +6,15 @@ function playerSelection(element) {
     const playerListName = document.createElement('li');
     playerListName.innerHTML = `${playerName}
     `
-
     playerNameList.appendChild(playerListName);
 
+    const playerAddingLimit = playerNameList.childNodes.length;
 
-    if (playerNameList.childNodes.length > 6) {
-        alert("hocce")
+
+    if (playerAddingLimit > 6) {
+        alert("Already Five Players added")
     } else {
-        return
+        return element
     }
 
     return
@@ -33,13 +34,13 @@ function playerExpenses(testId) {
     const playerExpenses = document.getElementById(testId);
     // const playerExpensesString = playerExpenses.innerText
     // const playerExpensValue = parseFloat(playerExpensesString)
-    playerExpenses.innerText = everyPlayerCost
+    playerExpenses.innerText = everyPlayerCost.toFixed(2)
     return playerExpenses.innerText
 }
 
 
 
-// common function for manager coach input
+// common function for manager + coach input
 
 function managerCoachCommon(inputId) {
     const managerCoachCommonInput = document.getElementById(inputId);
@@ -57,8 +58,8 @@ document.getElementById('calculate-player-cost').addEventListener('click', funct
 
 function playesrCost() {
     const totalplayerCostString = document.getElementById('player-expenses');
-    const totalplayerCostvalue = totalplayerCostString.innerText
-    const totalplayerCost = parseFloat(totalplayerCostvalue)
+    const totalplayerCostvalue = totalplayerCostString.innerText;
+    const totalplayerCost = parseFloat(totalplayerCostvalue);
     return totalplayerCost
 }
 
@@ -70,7 +71,6 @@ document.getElementById('calculate-total').addEventListener('click', function ()
 
     const totalCost = managerCost + coachCost + playerCost;
     const totalCostOutput = document.getElementById('total-team-cost');
-    totalCostOutput.innerText = totalCost;
+    totalCostOutput.innerText = totalCost.toFixed(2);
 
-    console.log(totalCost);
 })
