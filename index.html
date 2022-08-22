@@ -10,7 +10,7 @@
     <title> Best Five Soccer Players </title>
 </head>
 
-<body style="background-color:#151515 ; font-family: 'Manrope', sans-serif;" class="min-h-screen">
+<body style="background-color:#151515 ; font-family: 'Manrope', sans-serif;" class="min-h-full">
     <header>
         <div class=" grid bg-cover bg-no-repeat min-h-full " style="background-image: url(images/header_img.png);">
             <div class="grid">
@@ -25,7 +25,7 @@
             </div>
         </div>
     </header>
-    <main>
+    <main class="mb-40">
         <!-- player section -->
         <section class="mt-10">
             <div class="grid grid-cols-4 w-9/12  mx-auto gap-6">
@@ -104,11 +104,72 @@
 
                             </div>
                         </div>
+                        <!-- total cost section  -->
+                        <div class="card w-full bg-black shadow-xl rounded-none" style="min-height:26rem;">
+                            <div class="card-body">
+                                <h2 class="card-title mx-auto">Budget</h2>
+                                <img class="mb-5 w-9/12 mx-auto" src="images/Ureg-Ureg Marker.png" alt="">
+                                <div>
+                                    <div class="flex flex-col w-full lg:flex-row gap-4 ">
+                                        <div class=" flex items-center w-1/2  ">
+                                            <p class=>Per Player</p>
+                                        </div>
+                                        <input type="text" placeholder="1000"
+                                            class="input input-bordered rounded-none w-5/6 max-w-xs" />
+                                    </div>
+                                    <div class="card-actions justify-center mt-5">
+                                        <button class="  w-full rounded-none btn btn-primary">Calculate</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex flex-col w-full lg:flex-row gap-4 my-5">
+                                        <div class=" flex items-center w-5/6  ">
+                                            <p>Player Expenses</p>
+                                        </div>
+                                        <div class=" flex items-center w-5/6 max-w-xs">
+                                            <p>$<span>5000</span></p>
+                                        </div>
+
+                                    </div>
+                                    <div class="flex flex-col w-full lg:flex-row gap-4 ">
+                                        <div class=" flex items-center w-1/2  ">
+                                            <p class=>Manager</p>
+                                        </div>
+                                        <input type="text" placeholder="2000" value="2000"
+                                            class="input input-bordered rounded-none w-5/6 max-w-xs" />
+                                    </div>
+                                    <div class="flex flex-col w-full lg:flex-row gap-4 mt-5 ">
+                                        <div class=" flex items-center w-1/2  ">
+                                            <p class=>Coach</p>
+                                        </div>
+                                        <input type="text" placeholder="4000" value="4000"
+                                            class="input input-bordered rounded-none w-5/6 max-w-xs" />
+                                    </div>
+                                    <div class="card-actions justify-center mt-5">
+                                        <button class="  w-full rounded-none btn btn-primary">Calculate Total</button>
+                                    </div>
+                                    <div class="flex flex-col w-full lg:flex-row gap-4 my-5">
+                                        <div class=" flex items-center w-1/2  ">
+                                            <p class="font-bold">Total</p>
+                                        </div>
+                                        <div class=" flex items-center w-5/6 max-w-xs text-red-600">
+                                            <p>$<span>11000</span></p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <footer>
+        <hr class="border-gray-500">
+        <p class="text-center py-8">Copyright @ 2022 All Rights Reserved.</p>
+    </footer>
 
 </body>
 
