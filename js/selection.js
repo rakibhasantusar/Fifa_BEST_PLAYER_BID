@@ -1,25 +1,27 @@
-const playerNameList = document.getElementById('player-list');
+const playerNameList = document.getElementById('player-list'); // added on two function
 
+//function for adding player list and alert validation
 function playerSelection(element) {
-    element.disabled = true;  // button disabled done
+    element.disabled = true;  // button disabled done for bonus mark
     const playerName = element.parentNode.parentNode.children[0].innerText;
     const playerListName = document.createElement('li');
-    playerListName.innerHTML = `${playerName}
-    `
+    playerListName.innerHTML = `<p class="mt-5 font-normal text-lg" >${playerName}</p>`
     playerNameList.appendChild(playerListName);
+    const p = document.querySelectorAll('#player-list')
+    p.disabled = true
 
-    const playerAddingLimit = playerNameList.childNodes.length;
-
-
-    if (playerAddingLimit > 6) {
+    if (playerNameList.children.length >= 6) {
         alert("Already Five Players added")
-    } else {
-        return element
-    }
+        const playerLimit = playerNameList.children[5]
+        playerNameList.removeChild(playerLimit)
 
+    } else {
+        return
+    }
     return
 }
 
+//function for calculation player cost
 function perPlayercost(elementId) {
     const playerCount = playerNameList.children.length;
     const perPlayerBudget = document.getElementById(elementId)
@@ -29,18 +31,19 @@ function perPlayercost(elementId) {
     perPlayerBudget.value = "";
     return playerPerCost
 }
+
+
+// calulation common function
 function playerExpenses(testId) {
     const everyPlayerCost = perPlayercost('per-player-cost')
     const playerExpenses = document.getElementById(testId);
-    // const playerExpensesString = playerExpenses.innerText
-    // const playerExpensValue = parseFloat(playerExpensesString)
     playerExpenses.innerText = everyPlayerCost.toFixed(2)
     return playerExpenses.innerText
 }
 
 
 
-// common function for manager + coach input
+// common function for manager + coach input for bonus mark
 
 function managerCoachCommon(inputId) {
     const managerCoachCommonInput = document.getElementById(inputId);
