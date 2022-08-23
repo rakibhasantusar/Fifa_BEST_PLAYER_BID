@@ -3,6 +3,10 @@ const playerNameList = document.getElementById('player-list'); // added on two f
 //function for adding player list and alert validation
 function playerSelection(element) {
     element.disabled = true;  // button disabled done for bonus mark
+    element.style.backgroundColor = '#434343';
+    element.style.color = '#000';
+
+
     const playerName = element.parentNode.parentNode.children[0].innerText;
     const playerListName = document.createElement('li');
     playerListName.innerHTML = `<p class="mt-5 font-normal text-lg" >${playerName}</p>`
